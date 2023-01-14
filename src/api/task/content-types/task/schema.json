@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "Task",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_task": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category",
+      "mappedBy": "task"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Done",
+        "Pending"
+      ]
+    }
+  }
+}
